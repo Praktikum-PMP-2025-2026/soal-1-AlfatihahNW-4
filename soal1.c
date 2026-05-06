@@ -16,14 +16,6 @@ typedef struct pasien{
 }pasien;
 
 
-int durasitotal(int n, pasien data[n]){
-    if(n==1) return 0;
-
-    else 
-    data[n].durasi = data[n].durasi + durasitotal(n-1,data);
-    return (data[n].durasi);
-    
-}
 int main(){
     int ukuran;
     scanf("%d", &ukuran);
@@ -42,6 +34,11 @@ int main(){
     printf("\nWAIT");
     if(ukuran==1) printf(" 0");
     else {
-    int ho = durasitotal(ukuran,data);
-    printf("%d",ho);}
+    int n= 0;
+    for (int i = 0;i<ukuran;i++){
+        n += (ukuran-i)*data[i].durasi;
+    }
+    printf(" %d",n);
+    }
+
 }
