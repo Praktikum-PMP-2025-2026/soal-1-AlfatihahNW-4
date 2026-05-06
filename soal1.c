@@ -35,9 +35,10 @@ int main(){
     if(ukuran==1) printf(" 0");
     else {
     int n= 0;
-    for (int i = 0;i<ukuran;i++){
-        n += (ukuran-i)*data[i].durasi;
+    for (int i = 1;i<ukuran;i++){
+        n += (ukuran-i)*data[i-1].durasi;
     }
+    
     printf(" %d",n);
     }
 
